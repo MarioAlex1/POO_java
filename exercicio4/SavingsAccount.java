@@ -1,5 +1,6 @@
 public class SavingsAccount
 {
+	// todas as instancias compartilham a mesma taxa
 	private static double annualInterestRate;
 	private double savingsBalance;
 
@@ -8,13 +9,14 @@ public class SavingsAccount
 		this.savingsBalance = savingsBalance;
 	}
 
-	// O método para calcular o juros mensal pedido na questão
 	public void calculateMonthlyInterest()
 	{
-		savingsBalance += (savingsBalance * annualInterestRate) / 12;
+		// juros = (saldo * taxaanual) / 12
+		double monthlyInterest = (savingsBalance * annualInterestRate) / 12;
+		this.savingsBalance += monthlyInterest;
 	}
 
-	// Método que ajusta o valor da taxa
+	// Método static so mexe em variáveis static
 	public static void modifyInterestRate(double newRate)
 	{
 		annualInterestRate = newRate;
