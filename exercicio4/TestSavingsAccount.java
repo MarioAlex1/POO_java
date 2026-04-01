@@ -22,7 +22,6 @@ public class TestSavingsAccount
 		SavingsAccount.modifyInterestRate(0.05);
 		System.out.println("Simulando mais 1 mes a 5%");
 
-
 		saver1.calculateMonthlyInterest();
 		saver2.calculateMonthlyInterest();
 
